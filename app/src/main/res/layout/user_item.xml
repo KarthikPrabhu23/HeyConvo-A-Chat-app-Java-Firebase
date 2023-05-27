@@ -41,7 +41,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="Status"
                 android:textColor="#5A5959"
-                android:textSize="10.40dp" />
+                android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>
 

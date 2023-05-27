@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 // This was added
+import com.google.firebase.auth.FirebaseUser;
 import com.kp.chatnow2.R;
 
 
@@ -36,6 +37,18 @@ public class MainActivity extends AppCompatActivity{
     ImageView imglogout;
     ImageView cumbut,setbut;
 
+    FirebaseUser userCurr;
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = auth.getCurrentUser();
+//        if(currentUser != null){
+//            reload();
+//        }
+//    }
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +58,6 @@ public class MainActivity extends AppCompatActivity{
 
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-//        cumbut = findViewById(R.id.camBut);
         setbut = findViewById(R.id.settingBut);
 
         DatabaseReference reference = database.getReference().child("user");
@@ -57,15 +69,24 @@ public class MainActivity extends AppCompatActivity{
         adapter = new UserAdpter(MainActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
+        userCurr = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
 
         reference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                for (DataSnapshot dataSnapshot: snapshot.getChildren())
                {
                    Users users = dataSnapshot.getValue(Users.class);
-                   usersArrayList.add(users);
+
+//                   if(users.getUserId() !=  userCurr.getUid()){
+                       usersArrayList.add(users);
+//                   }
                }
+
                adapter.notifyDataSetChanged();
             }
 
@@ -74,6 +95,8 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+
+//        LOGOUT PROCESS
         imglogout = findViewById(R.id.logoutimg);
 
         imglogout.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +126,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+//        PROFILE SETTINGS
         setbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,13 +135,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-//        cumbut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(intent,10);
-//            }
-//        });
+
 
         if (auth.getCurrentUser() == null){
             Intent intent = new Intent(MainActivity.this,login.class);
