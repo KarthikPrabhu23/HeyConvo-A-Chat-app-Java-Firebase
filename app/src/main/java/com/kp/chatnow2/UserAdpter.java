@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -38,9 +37,10 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
 
         Users users = usersArrayList.get(position);
 
-        // TO HIDE THE USER
-        if(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals(users.getUserId())){
+        // TO HIDE THE USER. Leaves a space
+        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUserId())){
             holder.itemView.setVisibility(View.GONE);
+//            holder.itemView.setVisibility(View.INVISIBLE);
         }
 
         holder.username.setText(users.userName);
@@ -66,7 +66,7 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
         return usersArrayList.size();
     }
 
-    public class viewholder extends RecyclerView.ViewHolder {
+    public static class viewholder extends RecyclerView.ViewHolder {
         CircleImageView userimg;
         TextView username;
         TextView userstatus;
