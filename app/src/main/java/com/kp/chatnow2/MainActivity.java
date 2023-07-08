@@ -1,10 +1,5 @@
 package com.kp.chatnow2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -13,12 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-// This was added
-import com.google.firebase.auth.FirebaseUser;
-import com.kp.chatnow2.R;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,8 +66,6 @@ public class MainActivity extends AppCompatActivity{
         mainUserRecyclerView.setAdapter(adapter);
 
         userCurr = FirebaseAuth.getInstance().getCurrentUser();
-
-
 
 
         reference.addValueEventListener(new ValueEventListener() {
