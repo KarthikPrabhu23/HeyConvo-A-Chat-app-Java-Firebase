@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity{
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
-    ImageView cumbut,setbut;
+    ImageView cumbut,setbut, videobut;
 
     FirebaseUser userCurr;
 
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity{
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         setbut = findViewById(R.id.settingBut);
+        videobut = findViewById(R.id.videoBut);
 
         DatabaseReference reference = database.getReference().child("user");
 
