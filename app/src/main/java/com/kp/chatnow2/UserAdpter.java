@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -35,6 +37,12 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
     public void onBindViewHolder(@NonNull UserAdpter.viewholder holder, int position) {
 
         Users users = usersArrayList.get(position);
+
+        // TO HIDE THE USER
+        if(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid().equals(users.getUserId())){
+            holder.itemView.setVisibility(View.GONE);
+        }
+
         holder.username.setText(users.userName);
         holder.userstatus.setText(users.status);
         Picasso.get().load(users.profilepic).into(holder.userimg);
