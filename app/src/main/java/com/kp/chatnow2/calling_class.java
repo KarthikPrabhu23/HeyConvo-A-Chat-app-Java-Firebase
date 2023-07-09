@@ -7,6 +7,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ public class calling_class extends AppCompatActivity {
 
     EditText editText;
     Button btn;
+    ImageView chatBtn, userBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,8 @@ public class calling_class extends AppCompatActivity {
 
         editText = findViewById(R.id.TextID);
         btn = findViewById(R.id.callLogin);
-
+        chatBtn = findViewById(R.id.chatbut);
+        userBtn = findViewById(R.id.userbut);
 
         getSupportActionBar().hide();
 
@@ -36,6 +39,22 @@ public class calling_class extends AppCompatActivity {
                 startmyservice(editText.getText().toString());
                 Intent intent = new Intent(getApplicationContext(), profile.class);
                 intent.putExtra("caller",editText.getText().toString().trim());
+                startActivity(intent);
+            }
+        });
+
+        chatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(calling_class.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        userBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(calling_class.this, setting.class);
                 startActivity(intent);
             }
         });
