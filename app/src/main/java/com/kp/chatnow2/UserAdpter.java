@@ -38,10 +38,10 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
         Users users = usersArrayList.get(position);
 
         // TO HIDE THE USER. Leaves a space
-        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUserId())){
-            holder.itemView.setVisibility(View.GONE);
-//            holder.itemView.setVisibility(View.INVISIBLE);
-        }
+//        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUserId())){
+//            holder.itemView.setVisibility(View.GONE);
+////            holder.itemView.setVisibility(View.INVISIBLE);
+//        }
 
         holder.username.setText(users.userName);
         holder.userstatus.setText(users.status);
