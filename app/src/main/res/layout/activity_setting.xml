@@ -98,7 +98,7 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@drawable/bottomnav"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,10 +107,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"/>
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/chatbut"
         android:layout_width="65dp"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -122,12 +122,11 @@
         app:srcCompat="@drawable/chatoff" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/videooff"
         android:layout_width="70dp"
         android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
@@ -144,5 +143,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
         app:srcCompat="@drawable/profileon" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

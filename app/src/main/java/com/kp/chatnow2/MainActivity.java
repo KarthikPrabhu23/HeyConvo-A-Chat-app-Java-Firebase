@@ -23,15 +23,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdpter  adapter;
+    UserAdpter adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
-    ImageView cumbut,setbut, videobut;
+    ImageView cumbut, setbut, videobut;
 
     FirebaseUser userCurr;
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        database=FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         setbut = findViewById(R.id.settingBut);
         videobut = findViewById(R.id.videoBut);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity{
 
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdpter(MainActivity.this,usersArrayList);
+        adapter = new UserAdpter(MainActivity.this, usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
         userCurr = FirebaseAuth.getInstance().getCurrentUser();
@@ -73,16 +73,15 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-               for (DataSnapshot dataSnapshot: snapshot.getChildren())
-               {
-                   Users users = dataSnapshot.getValue(Users.class);
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Users users = dataSnapshot.getValue(Users.class);
 
 //                   if(users.getUserId() !=  userCurr.getUid()){
-                       usersArrayList.add(users);
+                    usersArrayList.add(users);
 //                   }
-               }
+                }
 
-               adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -97,16 +96,16 @@ public class MainActivity extends AppCompatActivity{
         imglogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(MainActivity.this,R.style.dialoge);
+                Dialog dialog = new Dialog(MainActivity.this, R.style.dialoge);
                 dialog.setContentView(R.layout.dialog_layout);
-                Button no,yes;
+                Button no, yes;
                 yes = dialog.findViewById(R.id.yesbnt);
                 no = dialog.findViewById(R.id.nobnt);
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(MainActivity.this,login.class);
+                        Intent intent = new Intent(MainActivity.this, login.class);
                         startActivity(intent);
                         finish();
                     }
@@ -131,9 +130,8 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-
-        if (auth.getCurrentUser() == null){
-            Intent intent = new Intent(MainActivity.this,login.class);
+        if (auth.getCurrentUser() == null) {
+            Intent intent = new Intent(MainActivity.this, login.class);
             startActivity(intent);
         }
 

@@ -37,9 +37,10 @@ public class setting extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseStorage storage;
     Uri setImageUri;
-    String email,password;
+    String email, password;
     ProgressDialog progressDialog;
 
+    ImageView chatButton, videoButton;
 
 
     @Override
@@ -54,6 +55,8 @@ public class setting extends AppCompatActivity {
         setname = findViewById(R.id.settingname);
         setstatus = findViewById(R.id.settingstatus);
         donebut = findViewById(R.id.donebutt);
+        chatButton = findViewById(R.id.chatbut);
+        videoButton = findViewById(R.id.videooff);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Saving...");
@@ -96,7 +99,7 @@ public class setting extends AppCompatActivity {
 
                 String name = setname.getText().toString();
                 String Status = setstatus.getText().toString();
-                if (setImageUri!=null){
+                if (setImageUri != null) {
                     storageReference.putFile(setImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
@@ -104,17 +107,17 @@ public class setting extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String finalImageUri = uri.toString();
-                                    Users users = new Users(auth.getUid(), name,email,password,finalImageUri,Status);
+                                    Users users = new Users(auth.getUid(), name, email, password, finalImageUri, Status);
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()){
+                                            if (task.isSuccessful()) {
                                                 progressDialog.dismiss();
                                                 Toast.makeText(setting.this, "Data Is saved ", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(setting.this,MainActivity.class);
+                                                Intent intent = new Intent(setting.this, MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
-                                            }else {
+                                            } else {
                                                 progressDialog.dismiss();
                                                 Toast.makeText(setting.this, "Some thing went wrong", Toast.LENGTH_SHORT).show();
                                             }
@@ -124,22 +127,22 @@ public class setting extends AppCompatActivity {
                             });
                         }
                     });
-                }else {
+                } else {
                     storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             String finalImageUri = uri.toString();
-                            Users users = new Users(auth.getUid(), name,email,password,finalImageUri,Status);
+                            Users users = new Users(auth.getUid(), name, email, password, finalImageUri, Status);
                             reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         progressDialog.dismiss();
                                         Toast.makeText(setting.this, "Changes saved successfully. ", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(setting.this,MainActivity.class);
+                                        Intent intent = new Intent(setting.this, MainActivity.class);
                                         startActivity(intent);
                                         finish();
-                                    }else {
+                                    } else {
                                         progressDialog.dismiss();
                                         Toast.makeText(setting.this, "Some thing went wrong", Toast.LENGTH_SHORT).show();
                                     }
@@ -149,6 +152,15 @@ public class setting extends AppCompatActivity {
                     });
                 }
 
+            }
+        });
+
+
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(setting.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
