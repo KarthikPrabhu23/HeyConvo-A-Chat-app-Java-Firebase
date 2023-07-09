@@ -27,6 +27,9 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        getSupportActionBar().hide();
+
         caller = findViewById(R.id.text);
         targetuser = findViewById(R.id.editId);
         callbtn = findViewById(R.id.callBtn);

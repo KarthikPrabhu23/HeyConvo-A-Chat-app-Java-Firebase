@@ -27,6 +27,9 @@ public class calling_class extends AppCompatActivity {
         editText = findViewById(R.id.TextID);
         btn = findViewById(R.id.callLogin);
 
+
+        getSupportActionBar().hide();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

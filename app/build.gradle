@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.kp.chatnow2"
-        minSdk 16
+        minSdk 21
         multiDexEnabled true
         targetSdk 33
         versionCode 1
