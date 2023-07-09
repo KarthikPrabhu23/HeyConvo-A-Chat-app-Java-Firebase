@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/videooff" />
+        app:srcCompat="@drawable/videoon" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -139,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/profileon" />
+        app:srcCompat="@drawable/usericon" />
 
     <EditText
         android:id="@+id/editId"

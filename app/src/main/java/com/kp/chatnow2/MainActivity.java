@@ -120,6 +120,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //        VIDEO CALL
+        videobut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, calling_class.class);
+                startActivity(intent);
+            }
+        });
+
 //        PROFILE SETTINGS
         setbut.setOnClickListener(new View.OnClickListener() {
             @Override
