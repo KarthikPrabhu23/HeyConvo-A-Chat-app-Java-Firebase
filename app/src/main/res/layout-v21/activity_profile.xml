@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".calling_class"
+    tools:context=".profile"
     android:background="@color/white">
+
 
     <ImageView
         android:id="@+id/imageView7"
@@ -34,7 +35,7 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="123dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,31 +142,44 @@
         app:srcCompat="@drawable/profileon" />
 
     <EditText
-        android:id="@+id/TextID"
+        android:id="@+id/editId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
         android:ems="10"
+        android:hint="@string/enter_your_id"
         android:inputType="text"
         android:text=""
-        android:hint="@string/enter_your_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/callLogin"
-        android:layout_width="135dp"
-        android:layout_height="78dp"
-        android:text="@string/login"
-        android:textColor="#FFFFFF"
-        android:textSize="@dimen/_19sdp"
-        app:backgroundTint="#8BC34A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405" />
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="202dp"
+        android:layout_height="39dp"
+        android:text="@string/text"
+        android:gravity="center"
+        android:textSize="@dimen/_9sdp"
+        android:backgroundTint="@color/purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288" />
+
+    <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+        android:id="@+id/callBtn"
+        android:layout_width="119dp"
+        android:layout_height="89dp"
+
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editId"
+        app:layout_constraintVertical_bias="0.226" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
