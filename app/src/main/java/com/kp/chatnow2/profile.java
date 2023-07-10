@@ -41,7 +41,7 @@ public class profile extends AppCompatActivity {
         chatBtn = findViewById(R.id.chatbut);
         userBtn = findViewById(R.id.useroff);
 
-        caller.setText("HeyConvo! Logging " + getIntent().getStringExtra("caller") + " in call");
+        caller.setText("Logging " + getIntent().getStringExtra("caller") + " for a call...");
 
         chatBtn.setOnClickListener(new View.OnClickListener() {
             @Override

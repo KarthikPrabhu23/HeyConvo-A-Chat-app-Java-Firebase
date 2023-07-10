@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">HeyConvo !</string>
-    <string name="enter_your_id">Enter your ID:-</string>
+    <string name="app_name">HeyConvo!</string>
+    <string name="enter_your_id">Enter username :-</string>
     <string name="login">LOGIN</string>
     <string name="text">Text</string>
     <string name="this_is_text">This is text</string>
-    <string name="enter_the_call_recipient_s_name">Enter the call recipient\'s name</string>
+    <string name="enter_the_call_recipient_s_name">Enter call recipient\'s name</string>
+    <string name="curiosity_made">Curiosity made</string>
+    <string name="now_supports_free_audio_video_calls"><![CDATA[Now supports free \n Audio & Video calls]]></string>
 </resources>
