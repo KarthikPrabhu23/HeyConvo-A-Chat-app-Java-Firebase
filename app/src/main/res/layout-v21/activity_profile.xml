@@ -143,24 +143,26 @@
 
     <EditText
         android:id="@+id/editId"
-        android:layout_width="229dp"
-        android:layout_height="69dp"
+        android:layout_width="325dp"
+        android:layout_height="62dp"
         android:ems="10"
-        android:hint="@string/enter_your_id"
+        android:gravity="center"
+        android:hint="@string/enter_the_call_recipient_s_name"
         android:inputType="text"
         android:text=""
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintVertical_bias="0.341" />
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="208dp"
-        android:layout_height="59dp"
+        android:layout_width="339dp"
+        android:layout_height="113dp"
         android:backgroundTint="@color/purple"
         android:gravity="center"
         android:text="@string/text"
@@ -169,20 +171,19 @@
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
         android:id="@+id/callBtn"
-        android:layout_width="119dp"
-        android:layout_height="89dp"
-        android:background="#A3E854"
+        android:layout_width="159dp"
+        android:layout_height="147dp"
+        android:background="@drawable/chatnowlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editId"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

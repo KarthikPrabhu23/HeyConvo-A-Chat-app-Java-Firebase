@@ -41,7 +41,7 @@ public class profile extends AppCompatActivity {
         chatBtn = findViewById(R.id.chatbut);
         userBtn = findViewById(R.id.useroff);
 
-        caller.setText("Logging "+getIntent().getStringExtra("caller"));
+        caller.setText("HeyConvo! Logging " + getIntent().getStringExtra("caller") + " in call");
 
         chatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,13 +77,11 @@ public class profile extends AppCompatActivity {
         });
 
 
-
     }
 
-    public void startvideocall(String targetuserid)
-    {
+    public void startvideocall(String targetuserid) {
         callbtn.setIsVideoCall(true);
         callbtn.setResourceID("zego_uikit_call");
-        callbtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetuserid,targetuserid)));
+        callbtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetuserid, targetuserid)));
     }
 }

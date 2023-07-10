@@ -143,14 +143,16 @@
 
     <EditText
         android:id="@+id/editId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="315dp"
+        android:layout_height="67dp"
         android:ems="10"
-        android:hint="@string/enter_your_id"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
+        android:hint="@string/enter_the_call_recipient_s_name"
         android:inputType="text"
+        android:gravity="center"
         android:text=""
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,27 +161,27 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="202dp"
-        android:layout_height="39dp"
-        android:text="@string/this_is_text"
+        android:layout_width="339dp"
+        android:layout_height="113dp"
+        android:backgroundTint="@color/purple"
+        android:gravity="center"
+        android:text="@string/text"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:gravity="center"
-        android:textSize="@dimen/_9sdp"
-        android:backgroundTint="@color/purple"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
         android:id="@+id/callBtn"
-        android:layout_width="119dp"
-        android:layout_height="89dp"
+        android:layout_width="174dp"
+        android:layout_height="152dp"
 
-        android:background="#FFFFFF"
+        android:background="@drawable/chatnowlogo"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
