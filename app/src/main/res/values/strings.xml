@@ -7,4 +7,5 @@
     <string name="enter_the_call_recipient_s_name">Enter call recipient\'s name</string>
     <string name="curiosity_made">Curiosity made</string>
     <string name="now_supports_free_audio_video_calls"><![CDATA[Now supports free \n Audio & Video calls]]></string>
+    <string name="v2_0">v2.0</string>
 </resources>
