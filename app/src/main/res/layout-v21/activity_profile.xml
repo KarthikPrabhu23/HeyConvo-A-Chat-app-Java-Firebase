@@ -127,10 +127,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/videooff" />
+        app:srcCompat="@drawable/videoon" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/useroff"
         android:layout_width="58dp"
         android:layout_height="53dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -139,16 +139,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/profileon" />
+        app:srcCompat="@drawable/usericon" />
 
     <EditText
         android:id="@+id/editId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="69dp"
         android:ems="10"
         android:hint="@string/enter_your_id"
         android:inputType="text"
         android:text=""
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,12 +159,14 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="202dp"
-        android:layout_height="39dp"
-        android:text="@string/text"
-        android:gravity="center"
-        android:textSize="@dimen/_9sdp"
+        android:layout_width="208dp"
+        android:layout_height="59dp"
         android:backgroundTint="@color/purple"
+        android:gravity="center"
+        android:text="@string/text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
@@ -174,8 +178,7 @@
         android:id="@+id/callBtn"
         android:layout_width="119dp"
         android:layout_height="89dp"
-
-        android:background="#FFFFFF"
+        android:background="#A3E854"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

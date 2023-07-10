@@ -3,11 +3,13 @@ package com.kp.chatnow2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton;
@@ -20,6 +22,8 @@ public class profile extends AppCompatActivity {
     TextView caller;
     EditText targetuser;
     ZegoSendCallInvitationButton callbtn;
+
+    ImageView chatBtn, userBtn;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -34,7 +38,26 @@ public class profile extends AppCompatActivity {
         targetuser = findViewById(R.id.editId);
         callbtn = findViewById(R.id.callBtn);
 
+        chatBtn = findViewById(R.id.chatbut);
+        userBtn = findViewById(R.id.useroff);
+
         caller.setText("Logging "+getIntent().getStringExtra("caller"));
+
+        chatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        userBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, setting.class);
+                startActivity(intent);
+            }
+        });
 
         targetuser.addTextChangedListener(new TextWatcher() {
             @Override
@@ -52,6 +75,8 @@ public class profile extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 
