@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="@dimen/_70sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -107,8 +107,8 @@
 
     <ImageView
         android:id="@+id/chatbut"
-        android:layout_width="65dp"
-        android:layout_height="57dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
@@ -119,8 +119,8 @@
 
     <ImageView
         android:id="@+id/videooff"
-        android:layout_width="70dp"
-        android:layout_height="59dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,8 +130,8 @@
 
     <ImageView
         android:id="@+id/useroff"
-        android:layout_width="58dp"
-        android:layout_height="53dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.844"
