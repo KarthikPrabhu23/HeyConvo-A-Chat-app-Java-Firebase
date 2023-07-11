@@ -22,6 +22,8 @@
 <img src="https://github.com/KarthikPrabhu23/HeyConvo/assets/85951820/787fcbb4-205f-47c4-a30f-0d296cb44c4d" width="210" height="420"/>
 
 #### Call screen
+<img src="https://github.com/KarthikPrabhu23/HeyConvo-A-Chat-app-Java-Firebase/assets/85951820/3ab7a7e8-dcd0-40e9-af17-c49586b685dc" width="200" height="400" />
+<br>
 <img src="https://github.com/KarthikPrabhu23/HeyConvo-A-Chat-app-Java-Firebase/assets/85951820/b0f3daf7-3a46-485a-9f58-07b735bcf39e" width="200" height="400" />
 
 <img src="https://github.com/KarthikPrabhu23/HeyConvo-A-Chat-app-Java-Firebase/assets/85951820/34333db2-9d52-4dbc-97ba-b545245fd1a1" width="200" height="400" />
@@ -47,12 +49,18 @@ ______________________________________
 - Application developed using Java
 
 ______________________________________
+#### Note ⭐
+- Both the caller & receiver must be online for calls.
+- The call screen logo will turn into a blue colored video icon indicating that you are online.
+- Makesure that the receiver's & caller's names match on both the devices (Case sensitive).
+
+
+______________________________________
 #### Dependencies ⭐
 1. Zegocloud Callkit
 2. Firebase
 3. Intuit SDP paackage
 
-   <br>
 ______________________________________
 #### Prerequisites ⭐
 Before you begin, ensure you have met the following requirements:
