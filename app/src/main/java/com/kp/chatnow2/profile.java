@@ -3,15 +3,18 @@ package com.kp.chatnow2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton;
 import com.zegocloud.uikit.service.defines.ZegoUIKitUser;
 
@@ -24,6 +27,7 @@ public class profile extends AppCompatActivity {
     ZegoSendCallInvitationButton callbtn;
 
     ImageView chatBtn, userBtn;
+    ImageView imglogout;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -73,6 +77,38 @@ public class profile extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+
+
+//        LOGOUT PROCESS
+        imglogout = findViewById(R.id.logoutimg);
+
+        imglogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(profile.this, R.style.dialoge);
+                dialog.setContentView(R.layout.dialog_layout);
+                Button no, yes;
+                yes = dialog.findViewById(R.id.yesbnt);
+                no = dialog.findViewById(R.id.nobnt);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(profile.this, login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 

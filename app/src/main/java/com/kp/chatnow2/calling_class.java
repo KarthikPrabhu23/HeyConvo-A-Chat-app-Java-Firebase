@@ -1,6 +1,7 @@
 package com.kp.chatnow2;
 
 import android.app.Application;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
@@ -20,6 +22,7 @@ public class calling_class extends AppCompatActivity {
     EditText editText;
     Button btn;
     ImageView chatBtn, userBtn;
+    ImageView imglogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,38 @@ public class calling_class extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+//        LOGOUT PROCESS
+        imglogout = findViewById(R.id.logoutimg);
+
+        imglogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(calling_class.this, R.style.dialoge);
+                dialog.setContentView(R.layout.dialog_layout);
+                Button no, yes;
+                yes = dialog.findViewById(R.id.yesbnt);
+                no = dialog.findViewById(R.id.nobnt);
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(calling_class.this, login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
     }
 
     public void startmyservice(String userid) {

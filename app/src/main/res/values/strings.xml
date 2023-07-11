@@ -27,4 +27,7 @@
     <string name="name">Name</string>
     <string name="name2">name</string>
     <string name="save">Save</string>
+    <string name="do_you_really_want_to_n_log_out">Do you really want \n to log out?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>
