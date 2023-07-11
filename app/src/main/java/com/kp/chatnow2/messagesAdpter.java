@@ -1,7 +1,7 @@
 package com.kp.chatnow2;
 
-import static com.kp.chatnow2.chatwindo.reciverIImg;
-import static com.kp.chatnow2.chatwindo.senderImg;
+import static com.kp.chatnow2.chatwindow.receiverIImg;
+import static com.kp.chatnow2.chatwindow.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -74,7 +74,7 @@ public class messagesAdpter extends RecyclerView.Adapter {
             Picasso.get().load(senderImg).into(viewHolder.circleImageView);
         }else { reciverViewHolder viewHolder = (reciverViewHolder) holder;
             viewHolder.msgtxt.setText(messages.getMessage());
-            Picasso.get().load(reciverIImg).into(viewHolder.circleImageView);
+            Picasso.get().load(receiverIImg).into(viewHolder.circleImageView);
 
 
         }

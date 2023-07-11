@@ -27,7 +27,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".chatwindo"
+            android:name=".chatwindow"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
