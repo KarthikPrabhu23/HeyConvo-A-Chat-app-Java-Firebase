@@ -58,7 +58,6 @@ public class calling_class extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     public void startmyservice(String userid) {
