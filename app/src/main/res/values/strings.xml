@@ -8,4 +8,12 @@
     <string name="curiosity_made">Curiosity made</string>
     <string name="now_supports_free_audio_video_calls"><![CDATA[Now supports free \n Audio & Video calls]]></string>
     <string name="v2_0">v2.0</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="username">UserName</string>
+    <string name="signup">signup</string>
+    <string name="welcome">Welcome</string>
+    <string name="create_an_account_with_us">Create an account with us.</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_a_user">Already a user?</string>
+    <string name="email">Email</string>
 </resources>

@@ -10,11 +10,11 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="280dp"
-        android:layout_height="83dp"
+        android:layout_width="@dimen/_202sdp"
+        android:layout_height="@dimen/_62sdp"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="@color/black"
         android:textSize="@dimen/_42sdp"
         android:textStyle="bold"
@@ -27,9 +27,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="240dp"
-        android:layout_height="44dp"
-        android:text="Welcome "
+        android:layout_width="@dimen/_102sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:text="@string/welcome"
         android:textColor="#808080"
         android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,19 +59,19 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="55dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/_3sdp"
                 app:srcCompat="@drawable/user" />
 
             <EditText
                 android:id="@+id/rgusername"
-                android:layout_width="260dp"
-                android:layout_height="52dp"
+                android:layout_width="@dimen/_202sdp"
+                android:layout_height="@dimen/_42sdp"
                 android:background="@drawable/signup_back"
                 android:ems="10"
-                android:hint="UserName"
+                android:hint="@string/username"
                 android:inputType="textPersonName"
                 android:padding="@dimen/_10sdp"
                 android:textColor="@color/white"
@@ -93,21 +93,20 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="55dp"
-                android:layout_height="31dp"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
                 app:srcCompat="@drawable/mailwhite" />
 
             <EditText
                 android:id="@+id/rgemail"
-                android:layout_width="259dp"
-                android:layout_height="52dp"
+                android:layout_width="@dimen/_202sdp"
+                android:layout_height="@dimen/_42sdp"
                 android:layout_marginTop="@dimen/_7sdp"
                 android:background="@drawable/signup_back"
                 android:ems="10"
-
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/_10sdp"
                 android:textColor="@color/white"
@@ -123,16 +122,16 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="55dp"
-                android:layout_height="31dp"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
                 app:srcCompat="@drawable/lockwhite" />
 
             <EditText
                 android:id="@+id/rgpassword"
-                android:layout_width="260dp"
-                android:layout_height="52dp"
+                android:layout_width="@dimen/_202sdp"
+                android:layout_height="@dimen/_42sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/signup_back"
                 android:ems="10"
@@ -152,20 +151,20 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="55dp"
-                android:layout_height="31dp"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
                 app:srcCompat="@drawable/unlockwhite" />
 
             <EditText
                 android:id="@+id/rgrepassword"
-                android:layout_width="260dp"
-                android:layout_height="52dp"
+                android:layout_width="@dimen/_202sdp"
+                android:layout_height="@dimen/_42sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/signup_back"
                 android:ems="10"
-                android:hint="Re-enter password"
+                android:hint="@string/re_enter_password"
                 android:inputType="textPassword"
                 android:padding="@dimen/_10sdp"
                 android:textColor="@color/white"
@@ -177,11 +176,11 @@
 
         <Button
             android:id="@+id/signupbutton"
-            android:layout_width="252dp"
-            android:layout_height="62dp"
+            android:layout_width="@dimen/_202sdp"
+            android:layout_height="@dimen/_52sdp"
             android:layout_marginTop="@dimen/_14sdp"
-            android:backgroundTint="#69e334"
-            android:text="signup"
+            android:backgroundTint="#6BEA34"
+            android:text="@string/signup"
             android:textColor="@color/white"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
@@ -191,9 +190,9 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilerg0"
-        android:layout_width="95dp"
-        android:layout_height="93dp"
-        android:src="@drawable/photocamera"
+        android:layout_width="@dimen/_112sdp"
+        android:layout_height="@dimen/_112sdp"
+        android:src="@drawable/photocamera1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -203,12 +202,12 @@
 
     <TextView
         android:id="@+id/loginbut"
-        android:layout_width="161dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/_92sdp"
+        android:layout_height="@dimen/_29sdp"
         android:gravity="center"
         android:text="Login!"
-        android:textSize="@dimen/_15sdp"
         android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -221,30 +220,28 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already a user?"
-        android:textSize="@dimen/_11sdp"
+        android:text="@string/already_a_user"
         android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.902" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create an account with us."
+        android:text="@string/create_an_account_with_us"
+        android:textColor="@color/black"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.136" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
