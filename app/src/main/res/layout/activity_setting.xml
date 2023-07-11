@@ -29,14 +29,15 @@
         android:gravity="center"
         android:inputType="textPersonName"
         android:padding="@dimen/_14sdp"
-        android:text="Name"
+        android:text="@string/name"
         android:textColor="@color/white"
         android:textSize="@dimen/_22sdp"
         app:layout_constraintBottom_toTopOf="@+id/settingstatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.879"
+        android:autofillHints="" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -61,20 +62,21 @@
         android:gravity="center"
         android:inputType="textPersonName"
         android:padding="@dimen/_14sdp"
-        android:text="name"
+        android:text="@string/name2"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="0.634"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/donebutt"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_40sdp"
         android:backgroundTint="#69e334"
-        android:text="Save"
+        android:text="@string/save"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +89,7 @@
         android:layout_width="@dimen/_190sdp"
         android:layout_height="@dimen/_52sdp"
         android:background="#00000000"
-        android:paddingLeft="@dimen/_8sdp"
+        android:paddingStart="@dimen/_8sdp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/app_name"
         android:textColor="@color/black"
@@ -154,7 +156,7 @@
         android:fontFamily="@font/spartan_thin"
         android:text="@string/v2_0"
         android:textColor="@color/teal_700"
-        android:textSize="@dimen/_10sdp"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.991"

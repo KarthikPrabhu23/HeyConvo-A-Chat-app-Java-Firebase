@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbg2"
+    android:background="@color/white"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="136dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        app:srcCompat="@drawable/topnav" />
+
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="409dp"
+        android:layout_height="123dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128"
+        app:srcCompat="@drawable/whitebg" />
 
 
 
     <LinearLayout
         android:id="@+id/toolBar"
-        android:layout_width="361dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_1sdp"
         android:background="#00000000"
-        android:gravity="right">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021">
 
 
         <ImageView
@@ -35,12 +61,11 @@
             app:srcCompat="@drawable/hamburgericon" />
 
         <TextView
-            android:layout_width="120dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/_82sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_3sdp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:layout_weight="1"
             android:background="#00000000"
             android:fontFamily="@font/poppins_bold"
@@ -51,8 +76,8 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="39dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
             android:layout_weight="1"
             app:srcCompat="@drawable/bell" />
@@ -62,194 +87,129 @@
             android:layout_width="@dimen/_29sdp"
             android:layout_height="@dimen/_29sdp"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/logout"
             android:transitionName="loout_img" />
 
 
     </LinearLayout>
 
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/toolBar"-->
+    <!--        android:layout_width="361dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginStart="30dp"-->
+    <!--        android:layout_marginTop="@dimen/_12sdp"-->
+    <!--        android:layout_marginEnd="11dp"-->
+    <!--        android:background="#00000000"-->
+    <!--        android:gravity="right">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView5"-->
+    <!--            android:layout_width="@dimen/_1sdp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:padding="@dimen/_9sdp"-->
+    <!--            app:srcCompat="@drawable/hamburgericon" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="120dp"-->
+    <!--            android:layout_height="48dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginTop="@dimen/_3sdp"-->
+    <!--            android:layout_marginStart="@dimen/_10sdp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="#00000000"-->
+    <!--            android:fontFamily="@font/poppins_bold"-->
+    <!--            android:text="@string/app_name"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/_20sdp"-->
+    <!--            tools:visibility="visible" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView4"-->
+    <!--            android:layout_width="39dp"-->
+    <!--            android:layout_height="32dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_weight="1"-->
+    <!--            app:srcCompat="@drawable/bell" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/logoutimg"-->
+    <!--            android:layout_width="@dimen/_29sdp"-->
+    <!--            android:layout_height="@dimen/_29sdp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginEnd="@dimen/_10sdp"-->
+    <!--            android:background="@drawable/logout"-->
+    <!--            android:transitionName="loout_img" />-->
+
+
+    <!--    </LinearLayout>-->
+
+    <!--    UPDATE -->
+
+
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/bottomnav" />
+
+
+    <ImageView
+        android:id="@+id/chatOn"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@drawable/chaton" />
+
+    <ImageView
+        android:id="@+id/videoBut"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@drawable/videooff" />
+
+    <ImageView
+        android:id="@+id/settingBut"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@drawable/usericon" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainUserRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="506dp"
-        android:layout_below="@id/toolBar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="113dp" >
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_width="@dimen/_262sdp"
+        android:layout_height="@dimen/_480sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
 
 
-
-<!--    <ImageView-->
-<!--        android:id="@+id/bottomNav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="90dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginLeft="0dp"-->
-<!--        android:layout_marginTop="540dp"-->
-<!--        android:layout_marginEnd="0dp"-->
-<!--        android:layout_marginRight="0dp"-->
-<!--        android:layout_marginBottom="0dp"-->
-<!--        app:srcCompat="@drawable/bottomnav" />-->
-
-<!--SECOND PASTE-->
-<!--    Line 118-->
-
-
-        <LinearLayout
-            android:layout_width="410dp"
-            android:layout_height="110dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="752dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="@dimen/_5sdp"
-
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:textAlignment="center">
-
-            <ImageView
-                android:id="@+id/chatOn"
-                android:layout_width="68dp"
-                android:layout_height="60dp"
-
-                android:layout_marginStart="3dp"
-                android:layout_marginLeft="13dp"
-                android:src="@drawable/chaton" />
-
-            <ImageView
-                android:id="@+id/videoBut"
-                android:layout_width="78dp"
-                android:layout_height="67dp"
-                android:layout_marginLeft="43dp"
-                android:src="@drawable/videooff" />
-
-            <ImageView
-                android:id="@+id/settingBut"
-                android:layout_width="69dp"
-                android:layout_height="57dp"
-                android:layout_marginLeft="43dp"
-                android:src="@drawable/usericon" />
-
-
-        </LinearLayout>
-
-
-    <!--    THIS IS NEW -->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/bottom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="90dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginLeft="0dp"-->
-<!--        android:layout_marginTop="756dp"-->
-<!--        android:layout_marginEnd="0dp"-->
-<!--        android:layout_marginRight="0dp"-->
-<!--        android:layout_marginBottom="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="1.0"-->
-<!--        app:srcCompat="@drawable/bottomnav" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/chatOn"-->
-<!--        android:layout_width="65dp"-->
-<!--        android:layout_height="57dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="49dp"-->
-<!--        android:layout_marginLeft="49dp"-->
-<!--        android:layout_marginTop="768dp"-->
-<!--        android:layout_marginEnd="297dp"-->
-<!--        android:layout_marginRight="297dp"-->
-<!--        android:layout_marginBottom="21dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.15"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.976"-->
-<!--        app:srcCompat="@drawable/chaton" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/videoBut"-->
-<!--        android:layout_width="70dp"-->
-<!--        android:layout_height="59dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="170dp"-->
-<!--        android:layout_marginLeft="170dp"-->
-<!--        android:layout_marginTop="769dp"-->
-<!--        android:layout_marginEnd="171dp"-->
-<!--        android:layout_marginRight="171dp"-->
-<!--        android:layout_marginBottom="18dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.976"-->
-<!--        app:srcCompat="@drawable/videooff" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/settingBut"-->
-<!--        android:layout_width="@dimen/_42sdp"-->
-<!--        android:layout_height="@dimen/_42sdp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="302dp"-->
-<!--        android:layout_marginLeft="302dp"-->
-<!--        android:layout_marginTop="771dp"-->
-<!--        android:layout_marginEnd="51dp"-->
-<!--        android:layout_marginRight="51dp"-->
-<!--        android:layout_marginBottom="22dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.844"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.976"-->
-<!--        app:srcCompat="@drawable/usericon" />-->
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
