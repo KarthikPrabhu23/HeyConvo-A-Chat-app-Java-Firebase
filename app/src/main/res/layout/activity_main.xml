@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="0dp"
-        android:layout_height="136dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_104sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="409dp"
-        android:layout_height="123dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_52sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
