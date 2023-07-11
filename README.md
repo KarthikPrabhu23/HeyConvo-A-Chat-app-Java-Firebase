@@ -59,7 +59,7 @@ ______________________________________
 #### Dependencies ⭐
 1. Zegocloud Callkit
 2. Firebase
-3. Intuit SDP paackage
+3. Intuit SDP package
 
 ______________________________________
 #### Prerequisites ⭐
