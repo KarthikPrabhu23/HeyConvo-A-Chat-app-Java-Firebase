@@ -16,23 +16,24 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder> {
     Context mainActivity;
     ArrayList<Users> usersArrayList;
-    public UserAdpter(MainActivity mainActivity, ArrayList<Users> usersArrayList) {
-        this.mainActivity=mainActivity;
-        this.usersArrayList=usersArrayList;
+
+    public UserAdapter(MainActivity mainActivity, ArrayList<Users> usersArrayList) {
+        this.mainActivity = mainActivity;
+        this.usersArrayList = usersArrayList;
     }
 
     @NonNull
     @Override
-    public UserAdpter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mainActivity).inflate(R.layout.user_item,parent,false);
+    public UserAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mainActivity).inflate(R.layout.user_item, parent, false);
         return new viewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserAdpter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull UserAdapter.viewholder holder, int position) {
 
         Users users = usersArrayList.get(position);
 
@@ -50,9 +51,9 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mainActivity, chatwindow.class);
-                intent.putExtra("nameeee",users.getUserName());
-                intent.putExtra("reciverImg",users.getProfilepic());
-                intent.putExtra("uid",users.getUserId());
+                intent.putExtra("nameeee", users.getUserName());
+                intent.putExtra("receiverImg", users.getProfilepic());
+                intent.putExtra("uid", users.getUserId());
                 mainActivity.startActivity(intent);
 
             }
@@ -69,6 +70,7 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
         CircleImageView userimg;
         TextView username;
         TextView userstatus;
+
         public viewholder(@NonNull View itemView) {
             super(itemView);
             userimg = itemView.findViewById(R.id.userimg);

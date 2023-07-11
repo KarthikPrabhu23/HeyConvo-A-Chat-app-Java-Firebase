@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdpter adapter;
+    UserAdapter adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdpter(MainActivity.this, usersArrayList);
+        adapter = new UserAdapter(MainActivity.this, usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
         userCurr = FirebaseAuth.getInstance().getCurrentUser();
