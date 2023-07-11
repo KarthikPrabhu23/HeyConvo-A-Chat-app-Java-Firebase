@@ -18,10 +18,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileimgg"
-            android:layout_width="71dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="@dimen/_54sdp"
             android:layout_marginTop="@dimen/_7sdp"
-            android:src="@drawable/photocamera"
+            android:src="@drawable/photocamera1"
             app:civ_border_color="@color/white"
             app:civ_border_width="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="parent"

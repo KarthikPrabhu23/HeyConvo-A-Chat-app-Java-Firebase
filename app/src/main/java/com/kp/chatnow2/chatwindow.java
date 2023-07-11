@@ -48,7 +48,7 @@ public class chatwindow extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chatwindo);
+        setContentView(R.layout.activity_chatwindow);
         getSupportActionBar().hide();
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
