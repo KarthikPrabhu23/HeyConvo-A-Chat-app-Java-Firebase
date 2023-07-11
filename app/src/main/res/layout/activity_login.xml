@@ -20,28 +20,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.079" />
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="@dimen/_222sdp"
         android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
         android:text="@string/sign_in_to_continue"
         android:textColor="@color/black"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -50,12 +51,10 @@
         android:background="@drawable/signup_shape"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
 
         <LinearLayout
@@ -75,6 +74,7 @@
                 android:id="@+id/editTexLogEmail"
                 android:layout_width="@dimen/_202sdp"
                 android:layout_height="@dimen/_52sdp"
+                android:autofillHints=""
                 android:background="@drawable/login_back"
                 android:ems="10"
                 android:hint="@string/email2"
@@ -90,8 +90,7 @@
                 app:layout_constraintHorizontal_bias="0.671"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.649"
-                android:autofillHints="" />
+                app:layout_constraintVertical_bias="0.649" />
         </LinearLayout>
 
 
@@ -114,6 +113,7 @@
                 android:layout_width="@dimen/_202sdp"
                 android:layout_height="@dimen/_52sdp"
 
+                android:autofillHints=""
                 android:background="@drawable/login_back"
                 android:ems="10"
                 android:hint="@string/password"
@@ -128,8 +128,7 @@
                 app:layout_constraintHorizontal_bias="0.671"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.813"
-                android:autofillHints="" />
+                app:layout_constraintVertical_bias="0.813" />
 
         </LinearLayout>
 
@@ -162,11 +161,12 @@
         android:gravity="center"
         android:text="@string/new_here_need_an_account"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/logsignup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/logsignup"
@@ -178,9 +178,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.902" />
 
     <TextView
         android:id="@+id/textView"
@@ -203,10 +204,10 @@
         android:background="@drawable/chatbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314"
+        app:layout_constraintVertical_bias="0.327"
         app:srcCompat="@drawable/chatnowlogo" />
 
 
