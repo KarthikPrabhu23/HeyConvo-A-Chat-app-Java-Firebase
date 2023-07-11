@@ -43,7 +43,7 @@ public class chatwindow extends AppCompatActivity {
     String senderRoom, receiverRoom;
     RecyclerView messageAdapter;
     ArrayList<msgModelclass> messagesArrayList;
-    messagesAdpter mmessagesAdapter;
+    messagesAdapter mmessagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class chatwindow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         messageAdapter.setLayoutManager(linearLayoutManager);
-        mmessagesAdapter = new messagesAdpter(chatwindow.this, messagesArrayList);
+        mmessagesAdapter = new messagesAdapter(chatwindow.this, messagesArrayList);
         messageAdapter.setAdapter(mmessagesAdapter);
 
 
