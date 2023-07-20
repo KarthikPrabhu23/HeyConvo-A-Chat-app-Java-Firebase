@@ -56,10 +56,16 @@
         android:id="@+id/ll2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginBottom="@dimen/_2sdp"
         android:orientation="horizontal">
 
@@ -67,13 +73,13 @@
             android:layout_width="@dimen/_122sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
             android:layout_weight="1"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_25sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_7sdp">
+            app:cardCornerRadius="@dimen/_25sdp">
 
             <EditText
                 android:id="@+id/textmsg"
@@ -84,22 +90,22 @@
                 android:backgroundTint="@color/black"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="@string/type_your_message"
-                android:textColorHint="#808080"
                 android:paddingStart="13.00dp"
                 android:paddingLeft="13.00dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="#808080" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/sendbtnn"
-            android:layout_width="@dimen/_42sdp"
-            android:layout_height="@dimen/_42sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_25sdp"
-            android:layout_marginRight="@dimen/_5sdp">
+            app:cardCornerRadius="@dimen/_25sdp">
 
             <ImageView
                 android:layout_width="27dp"
