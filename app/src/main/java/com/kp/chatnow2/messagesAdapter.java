@@ -1,7 +1,7 @@
 package com.kp.chatnow2;
 
-import static com.kp.chatnow2.chatwindow.receiverIImg;
-import static com.kp.chatnow2.chatwindow.senderImg;
+import static com.kp.chatnow2.chatwindo.reciverIImg;
+import static com.kp.chatnow2.chatwindo.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,24 +21,24 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class messagesAdapter extends RecyclerView.Adapter {
+public class messagesAdpter extends RecyclerView.Adpter {
     Context context;
-    ArrayList<msgModelclass> messagesAdapterArrayList;
-    int ITEM_SEND = 1;
-    int ITEM_RECEIVE = 2;
+    ArrayList<msgModelclass> messagesAdpterArrayList;
+    int ITEM_SEND=1;
+    int ITEM_RECIVE=2;
 
-    public messagesAdapter(Context context, ArrayList<msgModelclass> messagesAdapterArrayList) {
+    public messagesAdpter(Context context, ArrayList<msgModelclass> messagesAdpterArrayList) {
         this.context = context;
-        this.messagesAdapterArrayList = messagesAdapterArrayList;
+        this.messagesAdpterArrayList = messagesAdpterArrayList;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == ITEM_SEND) {
+        if (viewType == ITEM_SEND){
             View view = LayoutInflater.from(context).inflate(R.layout.sender_layout, parent, false);
             return new senderVierwHolder(view);
-        } else {
+        }else {
             View view = LayoutInflater.from(context).inflate(R.layout.reciver_layout, parent, false);
             return new reciverViewHolder(view);
         }
@@ -47,67 +47,67 @@ public class messagesAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        msgModelclass messages = messagesAdapterArrayList.get(position);
+        msgModelclass messages = messagesAdpterArrayList.get(position);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete this message?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                new AlertDialog.Builder(context).setTitle("Delete")
+                        .setMessage("Are you sure you want to delete this message?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
 
-                    }
-                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                }).show();
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        }).show();
 
                 return false;
             }
         });
-        if (holder.getClass() == senderVierwHolder.class) {
+        if (holder.getClass()==senderVierwHolder.class){
             senderVierwHolder viewHolder = (senderVierwHolder) holder;
-            viewHolder.msgTxt.setText(messages.getMessage());
-            Picasso.get().load(senderImg).into(viewHolder.circleImageView);
-        } else {
-            reciverViewHolder viewHolder = (reciverViewHolder) holder;
             viewHolder.msgtxt.setText(messages.getMessage());
-            Picasso.get().load(receiverIImg).into(viewHolder.circleImageView);
+            Picasso.get().load(senderImg).into(viewHolder.circleImageView);
+        }else { reciverViewHolder viewHolder = (reciverViewHolder) holder;
+            viewHolder.msgtxt.setText(messages.getMessage());
+            Picasso.get().load(reciverIImg).into(viewHolder.circleImageView);
+
+
         }
     }
 
     @Override
     public int getItemCount() {
-        return messagesAdapterArrayList.size();
+        return messagesAdpterArrayList.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        msgModelclass messages = messagesAdapterArrayList.get(position);
+        msgModelclass messages = messagesAdpterArrayList.get(position);
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderid())) {
             return ITEM_SEND;
         } else {
-            return ITEM_RECEIVE;
+            return ITEM_RECIVE;
         }
     }
 
-    class senderVierwHolder extends RecyclerView.ViewHolder {
+    class  senderVierwHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
-        TextView msgTxt;
-
+        TextView msgtxt;
         public senderVierwHolder(@NonNull View itemView) {
             super(itemView);
             circleImageView = itemView.findViewById(R.id.profilerggg);
-            msgTxt = itemView.findViewById(R.id.msgsendertyp);
+            msgtxt = itemView.findViewById(R.id.msgsendertyp);
 
         }
     }
-
     class reciverViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
         TextView msgtxt;
-
         public reciverViewHolder(@NonNull View itemView) {
             super(itemView);
             circleImageView = itemView.findViewById(R.id.pro);

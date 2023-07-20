@@ -29,62 +29,62 @@ import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class chatwindow extends AppCompatActivity {
-    String receiverImg, receiverUid, receiverName, SenderUID;
+public class chatwindo extends AppCompatActivity {
+    String reciverimg, reciverUid, reciverName, SenderUID;
     CircleImageView profile;
-    TextView receiverNName;
+    TextView reciverNName;
     FirebaseDatabase database;
     FirebaseAuth firebaseAuth;
     public static String senderImg;
-    public static String receiverIImg;
-    CardView sendBtn;
-    EditText textMsg;
+    public static String reciverIImg;
+    CardView sendbtn;
+    EditText textmsg;
 
-    String senderRoom, receiverRoom;
-    RecyclerView messageAdapter;
+    String senderRoom, reciverRoom;
+    RecyclerView messageAdpter;
     ArrayList<msgModelclass> messagesArrayList;
-    messagesAdapter mmessagesAdapter;
+    messagesAdpter mmessagesAdpter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chatwindow);
+        setContentView(R.layout.activity_chatwindo);
         getSupportActionBar().hide();
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        receiverName = getIntent().getStringExtra("nameeee");
-        receiverImg = getIntent().getStringExtra("reciverImg");
-        receiverUid = getIntent().getStringExtra("uid");
+        reciverName = getIntent().getStringExtra("nameeee");
+        reciverimg = getIntent().getStringExtra("reciverImg");
+        reciverUid = getIntent().getStringExtra("uid");
 
         messagesArrayList = new ArrayList<>();
 
-        sendBtn = findViewById(R.id.sendbtnn);
-        textMsg = findViewById(R.id.textmsg);
-        receiverNName = findViewById(R.id.recivername);
+        sendbtn = findViewById(R.id.sendbtnn);
+        textmsg = findViewById(R.id.textmsg);
+        reciverNName = findViewById(R.id.recivername);
         profile = findViewById(R.id.profileimgg);
-        messageAdapter = findViewById(R.id.msgadpter);
+        messageAdpter = findViewById(R.id.msgadpter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
-        messageAdapter.setLayoutManager(linearLayoutManager);
-        mmessagesAdapter = new messagesAdapter(chatwindow.this, messagesArrayList);
-        messageAdapter.setAdapter(mmessagesAdapter);
+        messageAdpter.setLayoutManager(linearLayoutManager);
+        mmessagesAdpter = new messagesAdpter(chatwindo.this, messagesArrayList);
+        messageAdpter.setAdapter(mmessagesAdpter);
 
 
-        Picasso.get().load(receiverImg).into(profile);
-        receiverNName.setText("" + receiverName);
+        Picasso.get().load(reciverimg).into(profile);
+        reciverNName.setText("" + reciverName);
 
         SenderUID = firebaseAuth.getUid();
 
-        senderRoom = SenderUID + receiverUid;
-        receiverRoom = receiverUid + SenderUID;
+        senderRoom = SenderUID + reciverUid;
+        reciverRoom = reciverUid + SenderUID;
 
 
         DatabaseReference reference = database.getReference().child("user").child(firebaseAuth.getUid());
-        DatabaseReference chatReference = database.getReference().child("chats").child(senderRoom).child("messages");
+        DatabaseReference chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
 
 
-        chatReference.addValueEventListener(new ValueEventListener() {
+        chatreference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 messagesArrayList.clear();
@@ -92,7 +92,7 @@ public class chatwindow extends AppCompatActivity {
                     msgModelclass messages = dataSnapshot.getValue(msgModelclass.class);
                     messagesArrayList.add(messages);
                 }
-                mmessagesAdapter.notifyDataSetChanged();
+                mmessagesAdpter.notifyDataSetChanged();
             }
 
             @Override
@@ -104,7 +104,7 @@ public class chatwindow extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 senderImg = snapshot.child("profilepic").getValue().toString();
-                receiverIImg = receiverImg;
+                reciverIImg = reciverimg;
             }
 
             @Override
@@ -113,15 +113,15 @@ public class chatwindow extends AppCompatActivity {
             }
         });
 
-        sendBtn.setOnClickListener(new View.OnClickListener() {
+        sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = textMsg.getText().toString();
+                String message = textmsg.getText().toString();
                 if (message.isEmpty()) {
-                    Toast.makeText(chatwindow.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(chatwindo.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                textMsg.setText("");
+                textmsg.setText("");
                 Date date = new Date();
                 msgModelclass messagess = new msgModelclass(message, SenderUID, date.getTime());
 
@@ -133,7 +133,7 @@ public class chatwindow extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 database.getReference().child("chats")
-                                        .child(receiverRoom)
+                                        .child(reciverRoom)
                                         .child("messages")
                                         .push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

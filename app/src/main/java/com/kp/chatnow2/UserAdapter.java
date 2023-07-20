@@ -10,30 +10,30 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder> {
+public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
     Context mainActivity;
     ArrayList<Users> usersArrayList;
-
-    public UserAdapter(MainActivity mainActivity, ArrayList<Users> usersArrayList) {
-        this.mainActivity = mainActivity;
-        this.usersArrayList = usersArrayList;
+    public UserAdpter(MainActivity mainActivity, ArrayList<Users> usersArrayList) {
+        this.mainActivity=mainActivity;
+        this.usersArrayList=usersArrayList;
     }
 
     @NonNull
     @Override
-    public UserAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mainActivity).inflate(R.layout.user_item, parent, false);
+    public UserAdpter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mainActivity).inflate(R.layout.user_item,parent,false);
         return new viewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserAdapter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull UserAdpter.viewholder holder, int position) {
 
         Users users = usersArrayList.get(position);
 
@@ -50,10 +50,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mainActivity, chatwindow.class);
-                intent.putExtra("nameeee", users.getUserName());
-                intent.putExtra("receiverImg", users.getProfilepic());
-                intent.putExtra("uid", users.getUserId());
+                Intent intent = new Intent(mainActivity, chatwindo.class);
+                intent.putExtra("nameeee",users.getUserName());
+                intent.putExtra("reciverImg",users.getProfilepic());
+                intent.putExtra("uid",users.getUserId());
                 mainActivity.startActivity(intent);
 
             }
@@ -70,7 +70,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder> {
         CircleImageView userimg;
         TextView username;
         TextView userstatus;
-
         public viewholder(@NonNull View itemView) {
             super(itemView);
             userimg = itemView.findViewById(R.id.userimg);
