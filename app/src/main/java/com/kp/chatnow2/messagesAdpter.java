@@ -1,7 +1,7 @@
 package com.kp.chatnow2;
 
-import static com.kp.chatnow2.chatwindow.receiverIImg;
-import static com.kp.chatnow2.chatwindow.senderImg;
+import static com.kp.chatnow2.chatwindo.receiverIImg;
+import static com.kp.chatnow2.chatwindo.senderImg;
 
 import android.app.AlertDialog;
 import android.content.Context;
