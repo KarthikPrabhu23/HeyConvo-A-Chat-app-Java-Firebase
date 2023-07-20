@@ -29,21 +29,21 @@ import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class chatwindo extends AppCompatActivity {
-    String reciverimg, reciverUid, reciverName, SenderUID;
+public class chatwindow extends AppCompatActivity {
+    String receiverImg, receiverUid, receiverName, SenderUID;
     CircleImageView profile;
-    TextView reciverNName;
+    TextView receiverNName;
     FirebaseDatabase database;
     FirebaseAuth firebaseAuth;
     public static String senderImg;
-    public static String reciverIImg;
-    CardView sendbtn;
-    EditText textmsg;
+    public static String receiverIImg;
+    CardView sendBtn;
+    EditText textMsg;
 
-    String senderRoom, reciverRoom;
-    RecyclerView messageAdpter;
+    String senderRoom, receiverRoom;
+    RecyclerView messageAdapter;
     ArrayList<msgModelclass> messagesArrayList;
-    messagesAdpter mmessagesAdpter;
+    messagesAdpter mmessagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,38 +53,38 @@ public class chatwindo extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        reciverName = getIntent().getStringExtra("nameeee");
-        reciverimg = getIntent().getStringExtra("reciverImg");
-        reciverUid = getIntent().getStringExtra("uid");
+        receiverName = getIntent().getStringExtra("nameeee");
+        receiverImg = getIntent().getStringExtra("reciverImg");
+        receiverUid = getIntent().getStringExtra("uid");
 
         messagesArrayList = new ArrayList<>();
 
-        sendbtn = findViewById(R.id.sendbtnn);
-        textmsg = findViewById(R.id.textmsg);
-        reciverNName = findViewById(R.id.recivername);
+        sendBtn = findViewById(R.id.sendbtnn);
+        textMsg = findViewById(R.id.textmsg);
+        receiverNName = findViewById(R.id.recivername);
         profile = findViewById(R.id.profileimgg);
-        messageAdpter = findViewById(R.id.msgadpter);
+        messageAdapter = findViewById(R.id.msgadpter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
-        messageAdpter.setLayoutManager(linearLayoutManager);
-        mmessagesAdpter = new messagesAdpter(chatwindo.this, messagesArrayList);
-        messageAdpter.setAdapter(mmessagesAdpter);
+        messageAdapter.setLayoutManager(linearLayoutManager);
+        mmessagesAdapter = new messagesAdpter(chatwindow.this, messagesArrayList);
+        messageAdapter.setAdapter(mmessagesAdapter);
 
 
-        Picasso.get().load(reciverimg).into(profile);
-        reciverNName.setText("" + reciverName);
+        Picasso.get().load(receiverImg).into(profile);
+        receiverNName.setText("" + receiverName);
 
         SenderUID = firebaseAuth.getUid();
 
-        senderRoom = SenderUID + reciverUid;
-        reciverRoom = reciverUid + SenderUID;
+        senderRoom = SenderUID + receiverUid;
+        receiverRoom = receiverUid + SenderUID;
 
 
         DatabaseReference reference = database.getReference().child("user").child(firebaseAuth.getUid());
-        DatabaseReference chatreference = database.getReference().child("chats").child(senderRoom).child("messages");
+        DatabaseReference chatReference = database.getReference().child("chats").child(senderRoom).child("messages");
 
 
-        chatreference.addValueEventListener(new ValueEventListener() {
+        chatReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 messagesArrayList.clear();
@@ -92,7 +92,7 @@ public class chatwindo extends AppCompatActivity {
                     msgModelclass messages = dataSnapshot.getValue(msgModelclass.class);
                     messagesArrayList.add(messages);
                 }
-                mmessagesAdpter.notifyDataSetChanged();
+                mmessagesAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -104,7 +104,7 @@ public class chatwindo extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 senderImg = snapshot.child("profilepic").getValue().toString();
-                reciverIImg = reciverimg;
+                receiverIImg = receiverImg;
             }
 
             @Override
@@ -113,15 +113,15 @@ public class chatwindo extends AppCompatActivity {
             }
         });
 
-        sendbtn.setOnClickListener(new View.OnClickListener() {
+        sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = textmsg.getText().toString();
+                String message = textMsg.getText().toString();
                 if (message.isEmpty()) {
-                    Toast.makeText(chatwindo.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(chatwindow.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                textmsg.setText("");
+                textMsg.setText("");
                 Date date = new Date();
                 msgModelclass messagess = new msgModelclass(message, SenderUID, date.getTime());
 
@@ -133,7 +133,7 @@ public class chatwindo extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 database.getReference().child("chats")
-                                        .child(reciverRoom)
+                                        .child(receiverRoom)
                                         .child("messages")
                                         .push().setValue(messagess).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
