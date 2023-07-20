@@ -64,24 +64,26 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="322dp"
+            android:layout_width="@dimen/_122sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_7sdp"
             android:layout_weight="1"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_25sdp">
+            app:cardCornerRadius="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_7sdp">
 
             <EditText
                 android:id="@+id/textmsg"
-                android:layout_width="300dp"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/_222sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:background="@null"
                 android:backgroundTint="@color/black"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Type your message..."
+                android:hint="@string/type_your_message"
                 android:textColorHint="#808080"
                 android:paddingStart="13.00dp"
                 android:paddingLeft="13.00dp"
@@ -91,12 +93,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/sendbtnn"
-            android:layout_width="47dp"
-            android:layout_height="46dp"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_25sdp">
+            app:cardCornerRadius="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_5sdp">
 
             <ImageView
                 android:layout_width="27dp"

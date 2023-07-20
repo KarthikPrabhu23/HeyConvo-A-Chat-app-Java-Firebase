@@ -30,4 +30,5 @@
     <string name="do_you_really_want_to_n_log_out">Do you really want \n to log out?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="type_your_message">Type your message...</string>
 </resources>

@@ -29,7 +29,7 @@ import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class chatwindow extends AppCompatActivity {
+public class chatwindo extends AppCompatActivity {
     String receiverImg, receiverUid, receiverName, SenderUID;
     CircleImageView profile;
     TextView receiverNName;
@@ -67,7 +67,7 @@ public class chatwindow extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         messageAdapter.setLayoutManager(linearLayoutManager);
-        mmessagesAdapter = new messagesAdpter(chatwindow.this, messagesArrayList);
+        mmessagesAdapter = new messagesAdpter(chatwindo.this, messagesArrayList);
         messageAdapter.setAdapter(mmessagesAdapter);
 
 
@@ -118,7 +118,7 @@ public class chatwindow extends AppCompatActivity {
             public void onClick(View view) {
                 String message = textMsg.getText().toString();
                 if (message.isEmpty()) {
-                    Toast.makeText(chatwindow.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(chatwindo.this, "Enter The Message First", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 textMsg.setText("");
